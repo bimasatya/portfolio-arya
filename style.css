@@ -1,0 +1,627 @@
+/* ==========================================================================
+   CSS VARIABLES (Modern SaaS Theme)
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #eef2f6 100%);
+    --bg-color: #f8fafc;
+    --text-main: #0f172a;      /* Slate 900 */
+    --text-muted: #475569;     /* Slate 600 */
+    --primary-accent: #4f46e5; /* Indigo 600 */
+    --primary-hover: #4338ca;  /* Indigo 700 */
+    --primary-light: #e0e7ff;  /* Indigo 100 */
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;   /* Slate 200 */
+    --dark-section: #0f172a;
+    
+    /* Typography & Spacing */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --section-padding: 6rem 1rem;
+    
+    /* Shadows (Stripe/Notion style) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    /* Gradient text for SaaS feel */
+    background: linear-gradient(to right, #0f172a, #4338ca);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+}
+
+/* Modern accent underline for H2 */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 4px;
+    background: var(--primary-accent);
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+p {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+.btn-primary {
+    background: var(--primary-accent);
+    color: #ffffff;
+    box-shadow: var(--shadow-md), 0 0 0 0 rgba(79, 70, 229, 0.5);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text-main);
+    border: 1.5px solid var(--border-color);
+    backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-main);
+    background: var(--card-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   NAVIGATION (Sticky & Glassmorphism)
+   ========================================================================== */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.nav-links a:hover {
+    color: var(--primary-accent);
+}
+
+/* Specific override for the Nav Button */
+.nav-links a.btn-primary {
+    color: #ffffff;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 2rem; /* Pill shape for nav CTA */
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    padding: 8rem 1rem 6rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    min-height: 90vh;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.hero p.subhead {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    /* Tambahkan baris ini */
+    text-align: justify;
+    
+    /* Opsional: Membuat distribusi spasi antar kata lebih rapi */
+    text-justify: inter-word; 
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: none;
+    position: relative;
+}
+
+/* Premium image styling with soft shadow and decoration */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    background: var(--primary-light);
+    z-index: -1;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   ABOUT SECTION & SKILLS
+   ========================================================================== */
+.about {
+    padding: var(--section-padding);
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- TAMBAHKAN KODE INI DI SINI --- */
+.about p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted); /* Agar warna teks konsisten dengan desain lainnya */
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+/* Pill-style SaaS tags */
+.skill-tag {
+    background: var(--primary-light);
+    color: var(--primary-hover);
+    padding: 0.6rem 1.25rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.skill-tag:hover {
+    background: var(--primary-accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   PORTFOLIO SECTION
+   ========================================================================== */
+.portfolio {
+    padding: var(--section-padding);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.project-img {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content p {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Notion-style metric badges */
+.project-metrics {
+    background: #f0fdf4;
+    color: #166534;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    border: 1px solid #bbf7d0;
+}
+
+.project-link {
+    margin-top: auto;
+    color: var(--primary-accent);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-link:hover {
+    color: var(--primary-hover);
+    gap: 0.75rem; /* Slide arrow effect */
+}
+
+/* ==========================================================================
+   SOCIAL PROOF / TESTIMONIAL
+   ========================================================================== */
+.social-proof {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: var(--primary-accent);
+    color: #ffffff;
+}
+
+.testimonial {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.testimonial-author {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   RESUME SECTION
+   ========================================================================== */
+.resume {
+    padding: var(--section-padding);
+    background: var(--card-bg);
+}
+
+.resume-item {
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    border-left: 2px solid var(--border-color);
+    position: relative;
+}
+
+/* Clean Timeline Dots */
+.resume-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 3px solid var(--primary-accent);
+    box-shadow: 0 0 0 4px var(--card-bg); /* Cutout effect */
+}
+
+.resume-date {
+    font-size: 0.875rem;
+    color: var(--primary-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.resume-item h3 {
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.resume-item p {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.contact {
+    padding: var(--section-padding);
+    background: var(--dark-section);
+    color: #ffffff;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #ffffff;
+}
+
+.contact h2::after {
+    background: var(--primary-accent);
+}
+
+.contact p {
+    color: #94a3b8; /* Slate 400 */
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+.contact a {
+    color: var(--primary-light);
+}
+
+.contact a:hover {
+    color: #ffffff;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+/* Modern Inputs */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #334155;
+    background: #1e293b;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder {
+    color: #64748b;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+    background: #0f172a;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--dark-section);
+    color: #64748b;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e293b;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (min-width: 768px) {
+    .hero-image {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 4rem 1rem;
+    }
+    
+    .hero {
+        padding: 6rem 1rem 4rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .hero p.subhead {
+        margin: 0 auto 2.5rem;
+    }
+    
+    .hero-ctas {
+        justify-content: center;
+    }
+    
+    .skills-grid {
+        justify-content: center;
+    }
+    
+    h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Make resume timeline look good on mobile */
+    .resume-item {
+        padding-left: 1.5rem;
+    }
+    
+    .resume .container > div:first-child {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-links {
+        display: none; /* Can be handled via JS for a hamburger menu */
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-ctas .btn {
+        width: 100%;
+    }
+}
