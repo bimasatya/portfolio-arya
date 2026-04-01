@@ -9,53 +9,126 @@
 
 <body>
 
-    <div class="container" style="padding: 4rem 1rem;">
+<div class="container project-container">
 
-        <a href="index.html" class="btn btn-outline">← Back</a>
+    <a href="index.html" class="btn btn-outline">← Back</a>
 
-        <h1 style="margin-top:2rem;">Dashboard Monitoring Proyek Telkom</h1>
+    <!-- HEADER (CENTER & BESAR) -->
+    <div class="project-header center-title">
+        <h1>
+            Dashboard Monitoring - Funneling Endstate District Sidoarjo
+        </h1>
 
-        <p style="margin-top:1rem; max-width:700px;">
-            Proyek ini bertujuan untuk meningkatkan monitoring dan visibilitas status proyek jaringan 
-            di tingkat distrik menggunakan dashboard berbasis data.
+        <p>
+            Proyek ini merupakan bagian dari kegiatan magang di PT Telkom Infrastruktur Indonesia (TIF) 
+            pada divisi Access Service Operation (ASO), yang berfokus pada peningkatan kualitas data operasional 
+            serta pengembangan sistem monitoring berbasis dashboard untuk mendukung pengambilan keputusan secara real-time.
         </p>
+    </div>
 
-        <!-- IMAGE -->
-        <div style="margin-top:2rem;">
-            <img src="assets/images/project1.jpg" style="width:100%; max-width:700px; border-radius:1rem;">
-        </div>
+    <!-- IMAGE -->
+    <div class="project-image">
+        <img src="assets/images/project1full.jpg" alt="Dashboard Project">
+    </div>
+
+    <!-- CASE STUDY -->
+    <div class="project-sections">
 
         <!-- PROBLEM -->
-        <h2 style="margin-top:3rem;">Problem</h2>
-        <p>
-            Monitoring proyek sebelumnya tidak terstruktur dan sulit dilacak secara real-time, 
-            sehingga menghambat pengambilan keputusan operasional.
-        </p>
+        <div class="project-card-section">
+            <h3>🚧 Problem</h3>
+            <p>
+                Data operasional PS–RE dan WO Endstate memiliki volume besar dan terus diperbarui setiap hari, 
+                sehingga sering terjadi inkonsistensi, duplikasi, serta ketidaksinkronan antara data sistem dan kondisi lapangan. 
+                Hal ini menyebabkan proses monitoring menjadi tidak efektif, dashboard berpotensi mengalami error, 
+                serta memperlambat proses pelaporan dan pengambilan keputusan oleh tim Helpdesk.
+            </p>
+        </div>
+
+        <!-- OBJECTIVE -->
+        <div class="project-card-section">
+            <h3>🎯 Objective</h3>
+            <p>
+                Meningkatkan akurasi dan konsistensi data operasional serta membangun dashboard monitoring interaktif 
+                yang mampu menampilkan status pekerjaan teknisi secara real-time untuk mendukung evaluasi kinerja dan 
+                pengambilan keputusan operasional.
+            </p>
+        </div>
 
         <!-- SOLUTION -->
-        <h2 style="margin-top:2rem;">Solution</h2>
-        <p>
-            Membangun dashboard funneling yang menampilkan status proyek seperti PS, Cancel, dan Work 
-            untuk memudahkan tracking dan evaluasi performa teknisi.
-        </p>
+        <div class="project-card-section">
+            <h3>💡 Solution</h3>
+            <p>
+                Mengimplementasikan proses data checking dan validasi secara berkelanjutan terhadap dataset operasional, 
+                serta mengembangkan dashboard monitoring berbasis Looker Studio yang mengintegrasikan berbagai status 
+                pekerjaan teknisi seperti PS, RE, Cancel, Work, On Tech, dan Fallout dalam satu platform terpusat.
+            </p>
+        </div>
 
         <!-- PROCESS -->
-        <h2 style="margin-top:2rem;">Process</h2>
-        <ul>
-            <li>Data collection dari sistem internal</li>
-            <li>Data cleaning menggunakan Excel & Python</li>
-            <li>Visualisasi menggunakan dashboard</li>
-            <li>Validasi data melalui uji petik lapangan</li>
-        </ul>
+        <div class="project-card-section">
+            <h3>⚙️ Process</h3>
+            <ul>
+                <li>Data validation dan cleaning terhadap ±20.000 entri data PS–RE</li>
+                <li>Cross-check data dengan Google Drive dan mentor Helpdesk</li>
+                <li>Pembangunan dashboard menggunakan Looker Studio</li>
+                <li>Pengembangan dashboard tambahan (GD Fallout Kendala)</li>
+                <li>Uji petik lapangan untuk validasi data dengan kondisi aktual</li>
+                <li>Evaluasi melalui weekly meeting dan housekeeping Telkomsel</li>
+            </ul>
+        </div>
+
+        <!-- CRITICAL INSIGHT -->
+        <div class="project-card-section">
+            <h3>🧠 Key Insights</h3>
+            <p>
+                Permasalahan utama dalam operasional bukan hanya terletak pada kurangnya visualisasi, 
+                tetapi pada kualitas data yang belum stabil akibat perubahan real-time dan perbedaan input teknisi. 
+                Tanpa proses validasi yang kuat, dashboard tidak hanya menjadi tidak akurat, tetapi juga berpotensi 
+                menyesatkan pengambilan keputusan.
+            </p>
+
+            <p>
+                Dengan adanya proses validasi data yang konsisten serta integrasi dashboard, monitoring operasional 
+                menjadi lebih terstruktur, transparan, dan dapat digunakan sebagai sumber kebenaran utama (single source of truth).
+            </p>
+        </div>
+
+        <!-- CONTRIBUTION -->
+        <div class="project-card-section">
+            <h3>🤝 Contribution</h3>
+            <p>
+                Berperan dalam proses validasi data operasional, pengembangan dashboard utama dan dashboard pendukung, 
+                serta maintenance dashboard secara berkala. Selain itu, juga terlibat dalam kegiatan uji petik lapangan 
+                dan input data pelanggan ke sistem CACTI untuk memastikan kesesuaian data dengan kondisi aktual.
+            </p>
+        </div>
+
+        <!-- METRICS -->
+        <div class="project-card-section">
+            <h3>📊 Key Metrics</h3>
+            <ul>
+                <li>Dataset: ±20.000 data operasional PS–RE</li>
+                <li>Data pelanggan: 780 entri</li>
+                <li>2 dashboard utama (Endstate & Fallout)</li>
+                <li>Digunakan dalam monitoring rutin & weekly meeting</li>
+            </ul>
+        </div>
 
         <!-- RESULT -->
-        <h2 style="margin-top:2rem;">Result</h2>
-        <p>
-            Dashboard berhasil membantu monitoring proyek secara real-time dan meningkatkan 
-            efektivitas pengambilan keputusan di tingkat operasional.
-        </p>
+        <div class="project-card-section highlight">
+            <h3>📈 Result</h3>
+            <p>
+                Dashboard yang dikembangkan telah digunakan secara aktif oleh tim Helpdesk sebagai alat monitoring utama 
+                dalam kegiatan operasional, termasuk housekeeping mingguan bersama Telkomsel. Implementasi ini berhasil 
+                meningkatkan akurasi data, mempercepat proses monitoring, serta mendukung pengambilan keputusan berbasis data 
+                secara lebih efektif.
+            </p>
+        </div>
 
     </div>
+
+</div>
 
 </body>
 </html>

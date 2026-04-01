@@ -9,83 +9,148 @@
 
 <body>
 
-<div class="container" style="padding: 4rem 1rem; max-width: 900px;">
+<div class="container project-container">
 
     <!-- BACK BUTTON -->
     <a href="index.html" class="btn btn-outline">← Back to Portfolio</a>
 
-    <!-- TITLE -->
-    <h1 style="margin-top:2rem;">
-        Sentiment Analysis of Customer Reviews using SVM
-    </h1>
+    <!-- HEADER (CENTER & BESAR) -->
+    <div class="project-header center-title">
+        <h1>
+            Geo-Spatial Sentiment Analysis of Business Reviews in Sidoarjo using SVM
+        </h1>
 
-    <!-- DESCRIPTION -->
-    <p style="margin-top:1rem;">
-        Project ini bertujuan untuk menganalisis sentimen pelanggan berdasarkan data ulasan bisnis 
-        menggunakan pendekatan Machine Learning, khususnya algoritma Support Vector Machine (SVM).
-    </p>
-
-    <!-- IMAGE -->
-    <div style="margin-top:2rem;">
-        <img src="assets/images/svm-project.jpg" 
-             alt="SVM Project" 
-             style="width:100%; border-radius:1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        <p>
+            Penelitian ini bertujuan untuk menganalisis sentimen ulasan bisnis di Kabupaten Sidoarjo 
+            menggunakan pendekatan machine learning serta memetakan hasilnya secara geografis 
+            untuk memahami pola persepsi masyarakat terhadap sektor usaha secara lebih komprehensif.
+        </p>
     </div>
 
-    <!-- PROBLEM -->
-    <h2 style="margin-top:3rem;">Problem</h2>
-    <p>
-        Banyaknya ulasan pelanggan dalam jumlah besar membuat proses analisis secara manual menjadi 
-        tidak efisien dan sulit untuk mendapatkan insight secara cepat.
-    </p>
+    <!-- IMAGE -->
+    <div class="project-image">
+        <img src="assets/images/posterproject2.jpg" alt="SVM Project">
+    </div>
 
-    <!-- OBJECTIVE -->
-    <h2 style="margin-top:2rem;">Objective</h2>
-    <p>
-        Membangun model klasifikasi sentimen untuk mengidentifikasi opini pelanggan menjadi 
-        kategori positif dan negatif secara otomatis.
-    </p>
+    <!-- CASE STUDY -->
+    <div class="project-sections">
 
-    <!-- SOLUTION -->
-    <h2 style="margin-top:2rem;">Solution</h2>
-    <p>
-        Menggunakan algoritma Support Vector Machine (SVM) untuk melakukan klasifikasi sentimen 
-        berbasis teks, dengan pipeline preprocessing dan feature extraction.
-    </p>
+        <!-- PROBLEM -->
+        <div class="project-card-section">
+            <h3>🚧 Problem</h3>
+            <p>
+                Ulasan bisnis pada platform digital seperti Google Maps memiliki jumlah yang sangat besar 
+                dan bersifat tidak terstruktur, sehingga sulit dianalisis secara manual. Selain itu, analisis 
+                sentimen konvensional seringkali hanya fokus pada teks tanpa mempertimbangkan konteks geografis, 
+                padahal lokasi memiliki peran penting dalam memahami persepsi masyarakat secara lebih mendalam.
+            </p>
+        </div>
 
-    <!-- PROCESS -->
-    <h2 style="margin-top:2rem;">Process</h2>
-    <ul style="margin-left:1.2rem; margin-top:1rem;">
-        <li>Data cleaning (case folding, tokenization, stopword removal)</li>
-        <li>Text preprocessing menggunakan NLTK</li>
-        <li>Feature extraction menggunakan TF-IDF</li>
-        <li>Model training menggunakan SVM</li>
-        <li>Evaluasi model (accuracy & confusion matrix)</li>
-    </ul>
+        <!-- OBJECTIVE -->
+        <div class="project-card-section">
+            <h3>🎯 Objective</h3>
+            <p>
+                Mengembangkan model klasifikasi sentimen berbasis Support Vector Machine (SVM) serta 
+                mengintegrasikan hasilnya dengan analisis geospasial untuk mengidentifikasi distribusi 
+                sentimen berdasarkan lokasi dan kategori bisnis di Kabupaten Sidoarjo.
+            </p>
+        </div>
 
-    <!-- TOOLS -->
-    <h2 style="margin-top:2rem;">Tools & Technologies</h2>
-    <p>
-        Python, Scikit-learn, Pandas, NLTK, TF-IDF Vectorizer
-    </p>
+        <!-- DATA -->
+        <div class="project-card-section">
+            <h3>📊 Data Used</h3>
+            <ul>
+                <li>58.679 ulasan pengguna dari Google Maps</li>
+                <li>5.675 entitas bisnis di 18 kecamatan</li>
+                <li>Atribut: rating, review text, lokasi (latitude & longitude)</li>
+            </ul>
+        </div>
 
-    <!-- RESULT -->
-    <h2 style="margin-top:2rem;">Result</h2>
-    <p>
-        Model berhasil mencapai akurasi sekitar <strong>±89%</strong> dalam mengklasifikasikan 
-        sentimen ulasan pelanggan, sehingga dapat digunakan sebagai dasar analisis kepuasan pelanggan.
-    </p>
+        <!-- PROCESS -->
+        <div class="project-card-section">
+            <h3>⚙️ Process</h3>
+            <ul>
+                <li>Web scraping data menggunakan Python (Playwright)</li>
+                <li>Preprocessing teks (tokenization, stopword, stemming, TF-IDF)</li>
+                <li>Labeling otomatis berdasarkan rating</li>
+                <li>Training model SVM (80:20 split)</li>
+                <li>Evaluasi menggunakan Precision, Recall, F1-Score</li>
+                <li>Validasi menggunakan K-Fold Cross Validation</li>
+                <li>Integrasi dengan data geospasial dan visualisasi peta</li>
+            </ul>
+        </div>
 
-    <!-- IMPACT -->
-    <h2 style="margin-top:2rem;">Impact</h2>
-    <p>
-        Hasil analisis membantu memahami persepsi pelanggan terhadap layanan, serta memberikan 
-        insight yang dapat digunakan untuk meningkatkan kualitas bisnis.
-    </p>
+        <!-- INSIGHT -->
+        <div class="project-card-section">
+            <h3>🧠 Key Insights</h3>
+            <p>
+                Hasil analisis menunjukkan bahwa mayoritas ulasan bersifat positif (~82%), 
+                yang mengindikasikan persepsi masyarakat terhadap layanan bisnis di Sidoarjo 
+                cenderung baik. Namun, terdapat klaster sentimen negatif pada beberapa wilayah tertentu, 
+                yang mengindikasikan adanya ketimpangan kualitas layanan antar lokasi.
+            </p>
+
+            <p>
+                Analisis spasial menunjukkan bahwa sektor seperti kuliner dan retail mendominasi jumlah bisnis, 
+                namun juga memiliki tingkat kompetisi tinggi, sehingga kualitas layanan menjadi faktor penentu 
+                utama dalam persepsi pelanggan.
+            </p>
+
+            <p>
+                Selain itu, model SVM menunjukkan performa yang sangat baik pada klasifikasi sentimen positif 
+                dan negatif, namun kurang optimal dalam mendeteksi sentimen netral akibat ketidakseimbangan data.
+            </p>
+        </div>
+
+        <!-- CRITICAL ANALYSIS -->
+        <div class="project-card-section">
+            <h3>🧩 Critical Analysis</h3>
+            <p>
+                Meskipun model memiliki akurasi yang cukup tinggi (~89%), terdapat keterbatasan pada distribusi data, 
+                khususnya pada kelas netral yang jumlahnya jauh lebih sedikit dibandingkan kelas lainnya. Hal ini 
+                menyebabkan model cenderung bias terhadap dua polaritas utama (positif dan negatif).
+            </p>
+
+            <p>
+                Selain itu, pendekatan labeling berbasis rating berpotensi mengabaikan nuansa opini dalam teks, 
+                sehingga interpretasi sentimen tidak sepenuhnya mencerminkan kondisi sebenarnya. Hal ini membuka 
+                peluang untuk pengembangan model yang lebih kompleks seperti deep learning atau pendekatan berbasis 
+                contextual embedding di masa depan.
+            </p>
+        </div>
+
+        <!-- METRICS -->
+        <div class="project-card-section">
+            <h3>📊 Key Metrics</h3>
+            <ul>
+                <li>Total data: 58.679 ulasan</li>
+                <li>Jumlah bisnis: 5.675</li>
+                <li>Akurasi model: ±89%</li>
+                <li>K-Fold validation menunjukkan performa stabil (~0.89)</li>
+            </ul>
+        </div>
+
+        <!-- RESULT -->
+        <div class="project-card-section highlight">
+            <h3>📈 Result</h3>
+            <p>
+                Integrasi antara analisis sentimen dan geospasial menghasilkan pemahaman yang lebih komprehensif 
+                terhadap persepsi masyarakat, tidak hanya dari sisi "apa" yang dirasakan, tetapi juga "di mana" 
+                persepsi tersebut terjadi. Hasil ini dapat dimanfaatkan sebagai dasar pengambilan keputusan 
+                yang lebih terarah bagi pelaku usaha maupun pemerintah daerah.
+            </p>
+        </div>
+
+    </div>
 
     <!-- CTA -->
-    <div style="margin-top:3rem;">
-        <a href="#" class="btn btn-primary">View Code (GitHub)</a>
+    <div class="project-cta">
+        <a href="#" 
+           class="btn btn-primary" 
+           target="_blank" 
+           rel="noopener noreferrer">
+           📄 View Full Research Paper
+        </a>
     </div>
 
 </div>
