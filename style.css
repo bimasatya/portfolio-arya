@@ -1028,3 +1028,444 @@ footer {
         padding: 0 1rem;
     }
 }
+
+/* ========================================================================== 
+   CREATIVE SECTION 
+   ========================================================================== */
+
+.creative {
+    margin-top: 4rem;
+}
+
+.creative p {
+    max-width: 700px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.creative-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.creative-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.creative-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.creative-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.creative-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.creative-metrics {
+    margin-top: auto;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ========================================================================== 
+   MOBILE RESPONSIVE – CREATIVE SECTION
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .creative {
+        margin-top: 3rem;
+    }
+
+    .creative-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .creative-card {
+        padding: 0.9rem;
+    }
+
+    .creative-card img {
+        height: 160px;
+    }
+
+    .creative-card h3 {
+        font-size: 1rem;
+    }
+
+    .creative-card p {
+        font-size: 0.9rem;
+    }
+
+    .creative-metrics {
+        font-size: 0.8rem;
+    }
+}
+
+/* --- RESET & BASICS (Scoped to wrapper to avoid global conflicts) --- */
+.bima-portfolio-wrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main); /* 🔥 samakan dengan global */
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+    color: var(--text-main); /* 🔥 ikut sistem warna utama */
+    line-height: 1.6;
+}
+.bima-portfolio-wrapper * {
+    box-sizing: inherit;
+}
+
+/* --- CONTAINER STRUKTUR (Meniru contoh EDA Anda) --- */
+.bima-portfolio-wrapper .project-container {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(10px);
+}
+
+.bima-portfolio-wrapper {
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+}
+
+body:not(.creative-page) {
+    background: var(--bg-gradient);
+}
+
+/* --- REKREASI DESAIN PDF --- */
+
+/* Separator Garis Biru */
+.bima-separator {
+    width: 60px;
+    height: 4px;
+    background-color: #003366; /* Biru Tua sesuai PDF */
+    margin: 20px auto;
+}
+
+/* Judul Seksi (Teks Gelap untuk Kartu Putih) */
+.bima-section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #111111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-left: 4px solid #003366;
+    padding-left: 10px;
+}
+
+/* Judul Seksi (Teks Terang untuk Latar Gelap) */
+.bima-section-title-light {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* --- HEADER / HERO --- */
+.bima-header {
+    background-color: #001a33; /* Warna Navy sangat tua sesuai PDF Page 1 */
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 8px; /* Sedikit rounding agar rapi */
+    margin-bottom: 30px;
+}
+
+.bima-kicker {
+    font-size: 1rem;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.bima-main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 5px 0;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, #818cf8, #c7d2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.bima-name {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #dddddd;
+    margin: 0;
+}
+
+.bima-hero-desc {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #cccccc;
+}
+
+/* --- SEKSI ABOUT & EDUCATION (Grid 2 Kolom, Kartu Putih) --- */
+.bima-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.bima-card {
+    background-color: #ffffff; /* Kartu Putih sesuai PDF */
+    color: #333333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.bima-card-body p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* --- SOSIAL MEDIA STRATEGY --- */
+.bima-social-strategy {
+    padding: 40px 20px;
+    background-color: #0a0a0a; /* Sedikit berbeda dari hitam pekat */
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.bima-social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.bima-social-desc {
+    background-color: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 3px solid #003366;
+}
+
+.bima-social-desc h4 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.bima-social-desc p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* --- SHOWCASE (Instagram & TikTok) --- */
+.bima-showcase {
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.bima-platform-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.bima-platform-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.bima-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.bima-showcase-item {
+    background-color: #111111;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #222222;
+    transition: transform 0.2s ease;
+}
+
+.bima-showcase-item:hover {
+    transform: translateY(-5px);
+}
+
+.bima-media-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Tinggi area gambar */
+    background-color: #222222; /* Placeholder color */
+}
+
+.bima-img-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Label tipe konten (Overlay di atas gambar) */
+.bima-content-type, .bima-content-type-pinned {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 51, 102, 0.8); /* Biru tua transparan */
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.bima-content-type-pinned {
+    background-color: rgba(204, 0, 0, 0.8); /* Merah untuk Pinned */
+}
+
+.bima-item-desc {
+    padding: 15px;
+}
+
+.bima-item-desc h5 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.bima-item-desc p {
+    margin: 0 0 15px 0;
+    font-size: 0.85rem;
+    color: #aaaaaa;
+}
+
+/* --- METRICS BADGES (Rekreasi Desain PDF) --- */
+.bima-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.bima-badge {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    border: 1px solid #333333;
+}
+
+.bima-badge-highlight {
+    background-color: #cc0000; /* Merah menyala sesuai PDF untuk 300K views */
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* --- FOOTER --- */
+.bima-footer {
+    padding: 40px 20px;
+    background-color: #001a33; /* Navy tua seperti header */
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.bima-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Tools Tags */
+.bima-tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bima-tool-tag {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Contact Info */
+.bima-contact p {
+    margin: 0 0 10px 0;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.bima-final-name {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .bima-main-title {
+        font-size: 2.2rem;
+    }
+    
+    .bima-header {
+        padding: 40px 20px;
+    }
+    
+    .project-container {
+        padding: 10px;
+    }
+}
+
+/* FIX OVERLAP HERO */
+.bima-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3rem; /* 🔥 penting */
+}
+
+/* FIX SECTION DI BAWAHNYA */
+.bima-sections-grid {
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.bima-portfolio-wrapper .project-container {
+    padding-top: 2rem;
+}
